@@ -1,0 +1,22 @@
+{
+  "name": "strip-indent",
+  "version": "0.0.0",
+  "description": "Strip leading whitespace from every line in a string",
+  "license": "MIT",
+  "repo": "sindresorhus/strip-indent",
+  "scripts": [
+    "index.js"
+  ],
+  "keywords": [
+    "strip",
+    "normalize",
+    "remove",
+    "indent",
+    "indentation",
+    "whitespace",
+    "space",
+    "tab",
+    "string",
+    "str"
+  ]
+}

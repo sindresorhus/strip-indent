@@ -1,0 +1,45 @@
+{
+  "name": "strip-indent",
+  "version": "0.0.0",
+  "description": "Strip leading whitespace from every line in a string",
+  "license": "MIT",
+  "repository": "sindresorhus/strip-indent",
+  "bin": {
+    "strip-indent": "cli.js"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "browser": "a=$npm_package_name; browserify -r ./index:$a -s $a index.js -o browser.js"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli",
+    "bin",
+    "browser",
+    "strip",
+    "normalize",
+    "remove",
+    "indent",
+    "indentation",
+    "whitespace",
+    "space",
+    "tab",
+    "string",
+    "str"
+  ],
+  "devDependencies": {
+    "mocha": "*",
+    "browserify": "^3.0.0"
+  }
+}
