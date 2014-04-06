@@ -1,6 +1,6 @@
 {
   "name": "strip-indent",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Strip leading whitespace from every line in a string",
   "license": "MIT",
   "main": "browser.js",
