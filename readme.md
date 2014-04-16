@@ -9,8 +9,6 @@ Useful for removing redundant indentation.
 
 ## Install
 
-Download [manually](https://github.com/sindresorhus/strip-indent/releases) or with a package-manager.
-
 ```bash
 $ npm install --save strip-indent
 ```
@@ -27,8 +25,6 @@ $ component install sindresorhus/strip-indent
 ## Usage
 
 ```js
-var stripIndent = require('strip-indent');
-
 var str = '\tunicorn\n\t\tcake';
 /*
 	unicorn
@@ -42,18 +38,12 @@ unicorn
 */
 ```
 
-Can be used with require, global and AMD in the browser.
-
 
 ## CLI
-
-You can also use it as a CLI app by installing it globally:
 
 ```bash
 $ npm install --global strip-indent
 ```
-
-### Usage
 
 ```bash
 $ strip-indent --help
