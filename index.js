@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function (str) {
-	var match = str.match(/^[ \t]*(?=[^\s])/gm);
+	var match = str.match(/^[ \t]*(?=\S)/gm);
 
 	if (!match) {
 		return str;
