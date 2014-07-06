@@ -59,6 +59,11 @@ Example
 ```
 
 
+## Related
+
+- [indent-string](https://github.com/sindresorhus/indent-string) - Indent each line in a string
+
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
