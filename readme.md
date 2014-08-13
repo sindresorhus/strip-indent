@@ -9,16 +9,8 @@ Useful for removing redundant indentation.
 
 ## Install
 
-```bash
+```sh
 $ npm install --save strip-indent
-```
-
-```bash
-$ bower install --save strip-indent
-```
-
-```bash
-$ component install sindresorhus/strip-indent
 ```
 
 
@@ -41,21 +33,21 @@ unicorn
 
 ## CLI
 
-```bash
+```sh
 $ npm install --global strip-indent
 ```
 
-```bash
+```sh
 $ strip-indent --help
 
-Usage
-  $ strip-indent <file>
-  $ echo <string> | strip-indent
+  Usage
+    strip-indent <file>
+    echo <string> | strip-indent
 
-Example
-  $ echo '\tunicorn\n\t\tcake' | strip-indent
-  unicorn
-  	cake
+  Example
+    echo '\tunicorn\n\t\tcake' | strip-indent
+    unicorn
+    	cake
 ```
 
 
@@ -66,4 +58,4 @@ Example
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)

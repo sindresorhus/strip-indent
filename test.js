@@ -1,6 +1,6 @@
 'use strict';
 var assert = require('assert');
-var stripIndent = require('./index');
+var stripIndent = require('./');
 
 it('should strip inferred indent', function () {
 	assert.strictEqual(stripIndent('\nunicorn\n'), '\nunicorn\n');
