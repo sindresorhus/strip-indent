@@ -1,6 +1,6 @@
 {
   "name": "strip-indent",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Strip leading whitespace from every line in a string",
   "license": "MIT",
   "repository": "sindresorhus/strip-indent",
