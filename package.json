@@ -36,10 +36,11 @@
     "string",
     "str"
   ],
+  "dependencies": {
+    "get-stdin": "^4.0.1",
+    "meow": "^3.3.0"
+  },
   "devDependencies": {
     "mocha": "*"
-  },
-  "dependencies": {
-    "get-stdin": "^4.0.1"
   }
 }

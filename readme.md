@@ -41,11 +41,11 @@ $ npm install --global strip-indent
 $ strip-indent --help
 
   Usage
-    strip-indent <file>
-    echo <string> | strip-indent
+    $ strip-indent <file>
+    $ echo <string> | strip-indent
 
   Example
-    echo '\tunicorn\n\t\tcake' | strip-indent
+    $ echo '\tunicorn\n\t\tcake' | strip-indent
     unicorn
     	cake
 ```
