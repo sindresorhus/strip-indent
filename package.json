@@ -37,8 +37,8 @@
     "str"
   ],
   "dependencies": {
-    "get-stdin": "^4.0.1",
-    "meow": "^3.3.0"
+    "get-stdin": "^5.0.1",
+    "meow": "^3.5.0"
   },
   "devDependencies": {
     "mocha": "*"

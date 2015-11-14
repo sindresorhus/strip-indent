@@ -2,21 +2,19 @@
 'use strict';
 var fs = require('fs');
 var meow = require('meow');
-var stdin = require('get-stdin');
+var getStdin = require('get-stdin');
 var stripIndent = require('./');
 
-var cli = meow({
-	help: [
-		'Usage',
-		'  $ strip-indent <file>',
-		'  $ echo <string> | strip-indent',
-		'',
-		'Example',
-		'  $ echo \'\\tunicorn\\n\\t\\tcake\' | strip-indent',
-		'  $ unicorn',
-		'  \tcake'
-	]
-});
+var cli = meow([
+	'Usage',
+	'  $ strip-indent <file>',
+	'  $ echo <string> | strip-indent',
+	'',
+	'Example',
+	'  $ echo \'\\tunicorn\\n\\t\\tcake\' | strip-indent',
+	'  $ unicorn',
+	'  \tcake'
+]);
 
 var input = cli.input[0];
 
@@ -32,5 +30,5 @@ if (!input && process.stdin.isTTY) {
 if (input) {
 	init(fs.readFileSync(input, 'utf8'));
 } else {
-	stdin(init);
+	getStdin().then(init);
 }
