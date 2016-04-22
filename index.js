@@ -1,16 +1,14 @@
 'use strict';
-module.exports = function (str) {
-	var match = str.match(/^[ \t]*(?=\S)/gm);
+module.exports = str => {
+	const match = str.match(/^[ \t]*(?=\S)/gm);
 
 	if (!match) {
 		return str;
 	}
 
-	var indent = Math.min.apply(Math, match.map(function (el) {
-		return el.length;
-	}));
-
-	var re = new RegExp('^[ \\t]{' + indent + '}', 'gm');
+	// TODO: use spread operator when targeting Node.js 6
+	const indent = Math.min.apply(Math, match.map(x => x.length)); // eslint-disable-line
+	const re = new RegExp(`^[ \\t]{${indent}}`, 'gm');
 
 	return indent > 0 ? str.replace(re, '') : str;
 };
