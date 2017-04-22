@@ -25,7 +25,7 @@ const str = '\tunicorn\n\t\tcake';
 		cake
 */
 
-stripIndent('\tunicorn\n\t\tcake');
+stripIndent(str);
 /*
 unicorn
 	cake
