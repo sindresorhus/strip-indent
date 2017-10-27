@@ -34,5 +34,8 @@
   "devDependencies": {
     "ava": "*",
     "xo": "*"
+  },
+  "dependencies": {
+    "min-indent": "^1.0.0"
   }
 }
