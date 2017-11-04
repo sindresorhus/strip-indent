@@ -31,11 +31,11 @@
     "string",
     "str"
   ],
+  "dependencies": {
+    "min-indent": "^1.0.0"
+  },
   "devDependencies": {
     "ava": "*",
     "xo": "*"
-  },
-  "dependencies": {
-    "min-indent": "^1.0.0"
   }
 }
