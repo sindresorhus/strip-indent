@@ -10,7 +10,7 @@ Useful for removing redundant indentation.
 ## Install
 
 ```
-$ npm install --save strip-indent
+$ npm install strip-indent
 ```
 
 
