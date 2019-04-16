@@ -19,13 +19,13 @@ $ npm install strip-indent
 ```js
 const stripIndent = require('strip-indent');
 
-const str = '\tunicorn\n\t\tcake';
+const string = '\tunicorn\n\t\tcake';
 /*
 	unicorn
 		cake
 */
 
-stripIndent(str);
+stripIndent(string);
 /*
 unicorn
 	cake
