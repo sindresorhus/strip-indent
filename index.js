@@ -1,5 +1,4 @@
 'use strict';
-
 const minIndent = require('min-indent');
 
 module.exports = string => {
