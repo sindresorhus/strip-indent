@@ -29,8 +29,7 @@
 		"whitespace",
 		"space",
 		"tab",
-		"string",
-		"str"
+		"string"
 	],
 	"dependencies": {
 		"min-indent": "^1.0.0"

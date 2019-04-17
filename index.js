@@ -8,7 +8,7 @@ module.exports = string => {
 		return string;
 	}
 
-	const regExp = new RegExp(`^[ \\t]{${indent}}`, 'gm');
+	const regex = new RegExp(`^[ \\t]{${indent}}`, 'gm');
 
-	return string.replace(regExp, '');
+	return string.replace(regex, '');
 };
