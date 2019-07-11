@@ -16,6 +16,6 @@ stripIndent(string);
 //	cake
 ```
 */
-declare function stripIndent(string: string): string;
+declare function stripIndent(string: string, testString?: string): string;
 
 export = stripIndent;

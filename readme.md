@@ -32,6 +32,13 @@ unicorn
 */
 ```
 
+You can pass a different string for indentation detection. Useful if your string may contain only whitespaces (like manipulating `node.raws.before` in a [PostCSS](https://github.com/postcss/postcss) plugin):
+
+```js
+const string = '\n\t';
+const testString = '\tunicorn\n\t\tcake';
+stripIndent(string, testString); // '\n'
+```
 
 ## Related
 
