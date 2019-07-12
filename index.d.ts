@@ -1,7 +1,16 @@
+declare namespace stripIndent {
+  interface Options {
+    /**
+		Whitespace number to be stripped. Determined automatically if not specified.
+		*/
+    readonly indent?: number;
+  }
+}
+
 /**
 Strip leading whitespace from each line in a string.
 
-The line with the least number of leading whitespace, ignoring empty lines, determines the number to remove.
+The line with the least number of leading whitespace, ignoring empty lines, determines the number to remove (unless specified in options).
 
 @example
 ```
@@ -16,6 +25,6 @@ stripIndent(string);
 //	cake
 ```
 */
-declare function stripIndent(string: string): string;
+declare function stripIndent(string: string, options?: stripIndent.Options): string;
 
 export = stripIndent;

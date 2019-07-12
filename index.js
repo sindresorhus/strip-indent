@@ -1,8 +1,8 @@
 'use strict';
 const minIndent = require('min-indent');
 
-module.exports = string => {
-	const indent = minIndent(string);
+module.exports = (string, options = {}) => {
+	const indent = options.indent === undefined ? minIndent(string) : options.indent;
 
 	if (indent === 0) {
 		return string;

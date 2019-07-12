@@ -32,6 +32,36 @@ unicorn
 */
 ```
 
+## API
+
+### stripIndent(string, [options])
+
+Returns a `string`.
+
+#### options
+
+Type: `object`
+
+##### indent
+
+Type: `string`
+
+Whitespace number to be stripped. Determined automatically if not specified.
+
+## Advanced usage
+
+Passing `indent` option: useful if the string may contain only whitespaces (like manipulating `node.raws.before` in a [PostCSS](https://github.com/postcss/postcss) plugin) or for optimization. Check the indentation first for the context using e.g. [min-indent](https://github.com/jamiebuilds/min-indent) and use this module to just strip it.
+
+```js
+const minIndent = require('min-indent');
+const stripIndent = require('strip-indent');
+
+const fullString = '\tunicorn\n\t\tcake';
+const string = '\n\t\t';
+const indent = minIndent(fullString);
+
+stripIndent(string, {indent}); // '\n\t'
+```
 
 ## Related
 
