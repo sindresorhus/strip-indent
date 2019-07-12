@@ -1,10 +1,10 @@
 declare namespace stripIndent {
-  interface Options {
-    /**
+	interface Options {
+		/**
 		Whitespace number to be stripped. Determined automatically if not specified.
 		*/
-    readonly indent?: number;
-  }
+		readonly indent?: number;
+	}
 }
 
 /**
