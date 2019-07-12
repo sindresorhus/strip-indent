@@ -44,7 +44,7 @@ Type: `object`
 
 ##### indent
 
-Type: `string`
+Type: `number`
 
 Whitespace number to be stripped. Determined automatically if not specified.
 
