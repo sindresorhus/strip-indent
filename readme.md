@@ -34,7 +34,7 @@ unicorn
 
 ## API
 
-### stripIndent(string, [options])
+### stripIndent(string, options?)
 
 Returns a `string`.
 
@@ -44,9 +44,10 @@ Type: `object`
 
 ##### indent
 
-Type: `number`
+Type: `number`\
+Default: The line with the least amount of leading whitespace, ignoring empty lines, determines the number.
 
-Whitespace number to be stripped. Determined automatically if not specified.
+Whitespace number to be stripped.
 
 ## Advanced usage
 
