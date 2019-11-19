@@ -8,7 +8,7 @@ test('main', t => {
 	t.is(stripIndent('\n\t\n\t\tunicorn\n\n\n\n\t\t\tunicorn'), '\n\t\nunicorn\n\n\n\n\tunicorn', 'ignore whitespace only lines');
 });
 
-test('indent option specified', t => {
+test('`indent` option', t => {
 	t.is(stripIndent('\n\t', {indent: 1}), '\n');
 	t.is(stripIndent('\n\tunicorn\n\t\tunicorn\n', {indent: 1}), '\nunicorn\n\tunicorn\n');
 	t.is(stripIndent('\n\tunicorn\n', {indent: 0}), '\n\tunicorn\n');
