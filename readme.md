@@ -1,4 +1,4 @@
-# strip-indent [![Build Status](https://travis-ci.org/sindresorhus/strip-indent.svg?branch=master)](https://travis-ci.org/sindresorhus/strip-indent)
+# strip-indent
 
 > Strip leading whitespace from each line in a string
 
