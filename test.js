@@ -1,5 +1,5 @@
 import test from 'ava';
-import stripIndent from '.';
+import stripIndent from './index.js';
 
 test('main', t => {
 	t.is(stripIndent('\nunicorn\n'), '\nunicorn\n');
