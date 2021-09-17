@@ -34,6 +34,7 @@ unicorn
 
 - [strip-indent-cli](https://github.com/sindresorhus/strip-indent-cli) - CLI for this module
 - [indent-string](https://github.com/sindresorhus/indent-string) - Indent each line in a string
+- [redent](https://github.com/sindresorhus/redent) - Strip redundant indentation and indent the string
 
 ---
 
