@@ -30,6 +30,33 @@ unicorn
 */
 ```
 
+## API
+
+### stripIndent(string)
+
+Strip leading whitespace from each line in a string.
+
+The line with the least number of leading whitespace, ignoring empty lines, determines the number to remove.
+
+### stripIndent.trimmed(string)
+
+Strip leading whitespace from each line in a string and trim leading/trailing newlines.
+
+Like `stripIndent()`, but also removes leading and trailing newlines. Useful for template literals.
+
+```js
+import stripIndent from 'strip-indent';
+
+stripIndent.trimmed(`
+	unicorn
+		cake
+`);
+/*
+unicorn
+	cake
+*/
+```
+
 ## Related
 
 - [strip-indent-cli](https://github.com/sindresorhus/strip-indent-cli) - CLI for this module
