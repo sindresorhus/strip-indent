@@ -8,8 +8,8 @@ Useful for removing redundant indentation.
 
 ## Install
 
-```
-$ npm install strip-indent
+```sh
+npm install strip-indent
 ```
 
 ## Usage
@@ -35,15 +35,3 @@ unicorn
 - [strip-indent-cli](https://github.com/sindresorhus/strip-indent-cli) - CLI for this module
 - [indent-string](https://github.com/sindresorhus/indent-string) - Indent each line in a string
 - [redent](https://github.com/sindresorhus/redent) - Strip redundant indentation and indent the string
-
----
-
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/npm-strip-indent?utm_source=npm-strip-indent&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
-	</b>
-	<br>
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>
