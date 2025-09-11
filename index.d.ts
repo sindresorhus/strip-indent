@@ -1,42 +1,43 @@
-declare const stripIndent: {
-	/**
-	Strip leading whitespace from each line in a string.
+/**
+Strip leading whitespace from each line in a string.
 
-	The line with the least number of leading whitespace, ignoring empty lines, determines the number to remove.
+The line with the least number of leading whitespace, ignoring empty lines, determines the number to remove.
 
-	@example
-	```
-	import stripIndent from 'strip-indent';
+@example
+```
+import stripIndent from 'strip-indent';
 
-	const string = '\tunicorn\n\t\tcake';
-	//	unicorn
-	//		cake
+const string = '\tunicorn\n\t\tcake';
+//	unicorn
+//		cake
 
-	stripIndent(string);
-	//unicorn
-	//	cake
-	```
-	*/
-	(string: string): string;
+stripIndent(string);
+//unicorn
+//	cake
+```
+*/
+export default function stripIndent(string: string): string;
 
-	/**
-	Strip leading whitespace from each line in a string and trim leading/trailing newlines.
+/**
+Strip leading whitespace from each line in a string and remove surrounding blank lines.
 
-	Like `stripIndent()`, but also removes leading and trailing newlines. Useful for template literals.
+The line with the least number of leading whitespace, ignoring empty lines, determines the number to remove.
+Leading and trailing lines that contain only whitespace are removed.
 
-	@example
-	```
-	import stripIndent from 'strip-indent';
+Useful for template literals and multi-line strings where you want clean boundaries.
 
-	stripIndent.trimmed(`
-		unicorn
-			cake
-	`);
-	//unicorn
-	//	cake
-	```
-	*/
-	trimmed(string: string): string;
-};
+@example
+```
+import {dedent} from 'strip-indent';
+
+dedent(`
+	unicorn
+		cake
+`);
+//unicorn
+//	cake
+```
+*/
+export function dedent(string: string): string;
 
 export default stripIndent;

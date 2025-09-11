@@ -38,16 +38,16 @@ Strip leading whitespace from each line in a string.
 
 The line with the least number of leading whitespace, ignoring empty lines, determines the number to remove.
 
-### stripIndent.trimmed(string)
+### dedent(string)
 
-Strip leading whitespace from each line in a string and trim leading/trailing newlines.
+Strip leading whitespace from each line in a string and remove surrounding blank lines.
 
-Like `stripIndent()`, but also removes leading and trailing newlines. Useful for template literals.
+Like `stripIndent()`, but also removes leading and trailing lines that contain only whitespace. Useful for template literals and multi-line strings where you want clean boundaries.
 
 ```js
-import stripIndent from 'strip-indent';
+import {dedent} from 'strip-indent';
 
-stripIndent.trimmed(`
+dedent(`
 	unicorn
 		cake
 `);

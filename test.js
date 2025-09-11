@@ -1,5 +1,5 @@
 import test from 'ava';
-import stripIndent from './index.js';
+import stripIndent, {dedent} from './index.js';
 
 test('main', t => {
 	t.is(stripIndent('\nunicorn\n'), '\nunicorn\n');
@@ -8,53 +8,54 @@ test('main', t => {
 	t.is(stripIndent('\n\t\n\t\tunicorn\n\n\n\n\t\t\tunicorn'), '\n\t\nunicorn\n\n\n\n\tunicorn', 'ignore whitespace only lines');
 });
 
-test('stripIndent.trimmed', t => {
+test('dedent', t => {
 	// Basic template literal use case
-	const templateLiteral = stripIndent.trimmed(`
+	const templateLiteral = dedent(`
 		unicorn
 			cake
 	`);
 	t.is(templateLiteral, 'unicorn\n\tcake');
 
 	// Issue #10 example
-	const fire = stripIndent.trimmed(`
+	const fire = dedent(`
 	THIS IS FINE.
 	I'M OK WITH THE EVENTS UNFOLDING CURRENTLY.
 `);
 	t.is(fire, 'THIS IS FINE.\nI\'M OK WITH THE EVENTS UNFOLDING CURRENTLY.');
 
-	// Multiple leading/trailing newlines
-	t.is(stripIndent.trimmed('\n\n\tunicorn\n\n'), 'unicorn');
+	// Multiple leading/trailing whitespace-only lines
+	t.is(dedent('\n \n\tfoo\n \n'), 'foo');
 
-	// Mixed indentation with leading/trailing newlines
-	const mixed = stripIndent.trimmed(`
+	// CRLF support
+	t.is(dedent('\r\n\t\r\n\tfoo\r\n\t\r\n'), 'foo');
 
-		first line
-			indented line
-		last line
+	// Mixed LF and CRLF
+	t.is(dedent('\r\n\n\tfoo\n\r\n'), 'foo');
 
-	`);
-	t.is(mixed, 'first line\n\tindented line\nlast line');
+	// Multiple whitespace-only lines at start and end
+	t.is(dedent('\n \n \nfoo\n \n \n'), 'foo');
 
-	// Only newlines
-	t.is(stripIndent.trimmed('\n\n\n'), '');
-
-	// Empty string
-	t.is(stripIndent.trimmed(''), '');
-
-	// String without leading/trailing newlines
-	t.is(stripIndent.trimmed('\tunicorn\n\t\tcake'), 'unicorn\n\tcake');
-
-	// Preserves internal empty lines
-	const withEmptyLines = stripIndent.trimmed(`
+	// Preserves internal empty lines and whitespace-only lines
+	const withInternalEmpty = dedent(`
 		first
 
 		second
+		  
+		third
 	`);
-	t.is(withEmptyLines, 'first\n\nsecond');
+	t.is(withInternalEmpty, 'first\n\nsecond\n  \nthird');
 
-	// Complex example with varied indentation
-	const complex = stripIndent.trimmed(`
+	// Only whitespace-only lines
+	t.is(dedent('\n \n \t \n'), '');
+
+	// Empty string
+	t.is(dedent(''), '');
+
+	// String without leading/trailing newlines - same as stripIndent
+	t.is(dedent('\tunicorn\n\t\tcake'), 'unicorn\n\tcake');
+
+	// Complex indentation patterns
+	const complex = dedent(`
 		function example() {
 			if (true) {
 				console.log('hello');
@@ -63,18 +64,16 @@ test('stripIndent.trimmed', t => {
 	`);
 	t.is(complex, 'function example() {\n\tif (true) {\n\t\tconsole.log(\'hello\');\n\t}\n}');
 
-	// Edge case: content that starts/ends with spaces - no newlines to trim, normal stripIndent behavior
-	const spacesOnly = stripIndent.trimmed('   \thello\n\t\tworld   ');
-	t.is(spacesOnly, ' \thello\nworld   ');
-
-	// Edge case: mixed leading whitespace with newlines - newlines trimmed then stripIndent applied
-	const mixedLeading = stripIndent.trimmed('\n   \n\t\thello\n\t\tworld\n   \n');
-	t.is(mixedLeading, ' \nhello\nworld\n ');
-
-	// Test that trailing spaces are preserved
-	const trailingSpaces = stripIndent.trimmed(`
+	// Preserves trailing spaces in content
+	const trailingSpaces = dedent(`
 		hello world    
 			indented    
 	`);
 	t.is(trailingSpaces, 'hello world    \n\tindented    ');
+
+	// Tabs and spaces mixed in whitespace-only lines
+	t.is(dedent(' \t \n\tfoo\n \t '), 'foo');
+
+	// Test with various whitespace patterns
+	t.is(dedent('\n\t\n\tfoo\n\t\n'), 'foo');
 });

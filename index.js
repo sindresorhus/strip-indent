@@ -12,8 +12,8 @@ export default function stripIndent(string) {
 	return string.replace(regex, '');
 }
 
-stripIndent.trimmed = string => {
-	// Remove leading and trailing lines that contain only whitespace
-	const trimmed = string.replace(/^[ \t]*[\r\n]+/, '').replace(/[\r\n]+[ \t]*$/, '');
+export function dedent(string) {
+	// Remove all leading and trailing whitespace-only lines
+	const trimmed = string.replace(/^(?:[ \t]*\r?\n)+|(?:\r?\n[ \t]*)+$/g, '');
 	return stripIndent(trimmed);
-};
+}
