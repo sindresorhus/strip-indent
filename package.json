@@ -32,11 +32,9 @@
 		"whitespace",
 		"space",
 		"tab",
-		"string"
+		"string",
+		"dedent"
 	],
-	"dependencies": {
-		"min-indent": "^1.0.1"
-	},
 	"devDependencies": {
 		"ava": "^3.15.0",
 		"xo": "^0.39.1"

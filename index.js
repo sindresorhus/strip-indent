@@ -1,15 +1,20 @@
-import minIndent from 'min-indent';
-
 export default function stripIndent(string) {
-	const indent = minIndent(string);
+	const match = string.match(/^[ \t]*(?=\S)/gm);
 
-	if (indent === 0) {
+	if (!match) {
 		return string;
 	}
 
-	const regex = new RegExp(`^[ \\t]{${indent}}`, 'gm');
+	let minIndent = Number.POSITIVE_INFINITY;
+	for (const indent of match) {
+		minIndent = Math.min(minIndent, indent.length);
+	}
 
-	return string.replace(regex, '');
+	if (minIndent === 0 || minIndent === Number.POSITIVE_INFINITY) {
+		return string;
+	}
+
+	return string.replace(new RegExp(`^[ \\t]{${minIndent}}`, 'gm'), '');
 }
 
 export function dedent(string) {
