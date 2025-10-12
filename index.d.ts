@@ -39,5 +39,3 @@ dedent(`
 ```
 */
 export function dedent(string: string): string;
-
-export default stripIndent;
